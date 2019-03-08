@@ -1,0 +1,40 @@
+<!DOCTYPE html><html>
+<head>print</head>
+<body>
+<script>
+getUser= function(){
+    var userList=[];
+    if( localStorage.getItem(userList) != null){
+        console.log( JSON.parse.localStorage.getItem('users'));
+}
+return userList;
+}
+addUser = function(name,email,address){
+
+    var userList=getUser();
+       var user={};
+       user.name=name;
+       user.email=email;
+       user.address=address;
+       userList.push(user);
+    localStorage.setItem('users',JSON.stringify(userList));
+  
+
+}
+deleteUser= function(){
+    localStorage.clear('user');
+}
+showUser= function(){
+    var userList=getUser();
+    console.log("name"+ "|"+ "email" +"|"+ "address")
+    console.log('list' + userList.length);
+    for(var i=0;i<userList.length;i++){
+        console.log(userList.name[i] + '|'+ userList.email[i] + '|'+ userList.email[i] )
+    }
+}
+
+    </script>
+
+</body>
+
+</html>
